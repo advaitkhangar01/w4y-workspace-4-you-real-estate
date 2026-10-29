@@ -1,0 +1,3 @@
+-- W4Y Database Seed Script
+-- Initial users and company settings are seeded programmatically via seed.js
+-- using environment variables.

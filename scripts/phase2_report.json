@@ -1,0 +1,760 @@
+{
+  "freshInstallTest": {
+    "schemaFailed": false,
+    "schemaError": null
+  },
+  "foreignKeys": [
+    {
+      "table_name": "attendance",
+      "column_name": "batch_id",
+      "foreign_table_name": "attendance_batches",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "attendance_batch_id_fkey"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "RESTRICT",
+      "constraint_name": "attendance_user_id_fkey"
+    },
+    {
+      "table_name": "attendance_attempts",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "attendance_attempts_user_id_fkey"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "audit_logs_user_id_fkey"
+    },
+    {
+      "table_name": "client_addresses",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "client_addresses_client_id_fkey"
+    },
+    {
+      "table_name": "client_banking",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "client_banking_client_id_fkey"
+    },
+    {
+      "table_name": "client_contacts",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "client_contacts_client_id_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "assigned_to",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "comments_assigned_to_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "parent_id",
+      "foreign_table_name": "comments",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "comments_parent_id_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "comments_project_id_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "comments_user_id_fkey"
+    },
+    {
+      "table_name": "daily_reports",
+      "column_name": "tenant_id",
+      "foreign_table_name": "tenants",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "daily_reports_tenant_id_fkey"
+    },
+    {
+      "table_name": "daily_reports",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "daily_reports_user_id_fkey"
+    },
+    {
+      "table_name": "documents",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "documents_project_id_fkey"
+    },
+    {
+      "table_name": "documents",
+      "column_name": "uploaded_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "documents_uploaded_by_fkey"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "employee_leave_balance_user_id_fkey"
+    },
+    {
+      "table_name": "employee_leave_summary",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "employee_leave_summary_user_id_fkey"
+    },
+    {
+      "table_name": "expense_audits",
+      "column_name": "verified_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "expense_audits_verified_by_fkey"
+    },
+    {
+      "table_name": "invoice_payment_stages",
+      "column_name": "invoice_id",
+      "foreign_table_name": "invoices",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "invoice_payment_stages_invoice_id_fkey"
+    },
+    {
+      "table_name": "invoice_payment_stages",
+      "column_name": "payment_stage_id",
+      "foreign_table_name": "project_payment_stages",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "invoice_payment_stages_payment_stage_id_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_client_id_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_created_by_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "payment_stage_id",
+      "foreign_table_name": "project_payment_stages",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_payment_stage_id_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_project_id_fkey"
+    },
+    {
+      "table_name": "leave_requests",
+      "column_name": "reviewed_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "leave_requests_reviewed_by_fkey"
+    },
+    {
+      "table_name": "leave_requests",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "leave_requests_user_id_fkey"
+    },
+    {
+      "table_name": "monthly_closing_log",
+      "column_name": "closed_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "monthly_closing_log_closed_by_fkey"
+    },
+    {
+      "table_name": "notifications",
+      "column_name": "sender_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "notifications_sender_id_fkey"
+    },
+    {
+      "table_name": "notifications",
+      "column_name": "tenant_id",
+      "foreign_table_name": "tenants",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "notifications_tenant_id_fkey"
+    },
+    {
+      "table_name": "notifications",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "notifications_user_id_fkey"
+    },
+    {
+      "table_name": "office_expenses",
+      "column_name": "period_unlock_id",
+      "foreign_table_name": "period_unlock_log",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "office_expenses_period_unlock_id_fkey"
+    },
+    {
+      "table_name": "payroll",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "RESTRICT",
+      "constraint_name": "payroll_user_id_fkey"
+    },
+    {
+      "table_name": "period_unlock_log",
+      "column_name": "relocked_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "period_unlock_log_relocked_by_fkey"
+    },
+    {
+      "table_name": "period_unlock_log",
+      "column_name": "unlocked_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "period_unlock_log_unlocked_by_fkey"
+    },
+    {
+      "table_name": "project_assignments",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_assignments_project_id_fkey"
+    },
+    {
+      "table_name": "project_assignments",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_assignments_user_id_fkey"
+    },
+    {
+      "table_name": "project_document_amounts",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_document_amounts_project_id_fkey"
+    },
+    {
+      "table_name": "project_payment_stages",
+      "column_name": "initiated_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "project_payment_stages_initiated_by_fkey"
+    },
+    {
+      "table_name": "project_payment_stages",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_payment_stages_project_id_fkey"
+    },
+    {
+      "table_name": "project_stages",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_stages_project_id_fkey"
+    },
+    {
+      "table_name": "project_stakeholders",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_stakeholders_project_id_fkey"
+    },
+    {
+      "table_name": "project_vendors",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_vendors_project_id_fkey"
+    },
+    {
+      "table_name": "project_vendors",
+      "column_name": "vendor_id",
+      "foreign_table_name": "vendors",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_vendors_vendor_id_fkey"
+    },
+    {
+      "table_name": "projects",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "NO ACTION",
+      "constraint_name": "projects_client_id_fkey"
+    },
+    {
+      "table_name": "projects",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "projects_created_by_fkey"
+    },
+    {
+      "table_name": "task_messages",
+      "column_name": "sender_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "task_messages_sender_id_fkey"
+    },
+    {
+      "table_name": "task_messages",
+      "column_name": "task_id",
+      "foreign_table_name": "tasks",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_messages_task_id_fkey"
+    },
+    {
+      "table_name": "task_participants",
+      "column_name": "added_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_participants_added_by_fkey"
+    },
+    {
+      "table_name": "task_participants",
+      "column_name": "task_id",
+      "foreign_table_name": "tasks",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_participants_task_id_fkey"
+    },
+    {
+      "table_name": "task_participants",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_participants_user_id_fkey"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "assigned_to",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "tasks_assigned_to_fkey"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "tasks_created_by_fkey"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "tasks_project_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_created_by_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "employee_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_employee_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "period_unlock_id",
+      "foreign_table_name": "period_unlock_log",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_period_unlock_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_project_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "vendor_id",
+      "foreign_table_name": "vendors",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_vendor_id_fkey"
+    },
+    {
+      "table_name": "users",
+      "column_name": "batch_id",
+      "foreign_table_name": "attendance_batches",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "users_batch_id_fkey"
+    },
+    {
+      "table_name": "users",
+      "column_name": "tenant_id",
+      "foreign_table_name": "tenants",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "users_tenant_id_fkey"
+    }
+  ],
+  "healthChecks": {
+    "attLateConflict": 0,
+    "attOrphanCheckins": 0,
+    "attNullBatch": 0,
+    "userNullBatch": 4,
+    "attDuplicatesCount": 0,
+    "payrollDuplicatesCount": 0,
+    "payrollMismatchCount": 0,
+    "leaveDupesCount": 0,
+    "invoiceStageMismatchCount": 0
+  },
+  "moneyCols": [
+    {
+      "table_name": "company_capital",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "column_name": "closing_balance",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "column_name": "opening_balance",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "received_amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "leave_requests",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "monthly_closing_log",
+      "column_name": "pending_payroll_amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "office_expenses",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "payroll",
+      "column_name": "base_salary",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "project_document_amounts",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "project_payment_stages",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "amount",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "users",
+      "column_name": "base_salary",
+      "data_type": "numeric"
+    },
+    {
+      "table_name": "users",
+      "column_name": "hourly_rate",
+      "data_type": "numeric"
+    }
+  ],
+  "timeColsWithoutTz": [
+    {
+      "table_name": "project_stakeholders",
+      "column_name": "created_at",
+      "data_type": "timestamp without time zone"
+    }
+  ],
+  "uniqueConstraints": [
+    {
+      "table_name": "attendance",
+      "constraint_name": "attendance_user_id_date_key",
+      "column_name": "date"
+    },
+    {
+      "table_name": "attendance",
+      "constraint_name": "attendance_user_id_date_key",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "attendance_batches",
+      "constraint_name": "attendance_batches_name_key",
+      "column_name": "name"
+    },
+    {
+      "table_name": "attendance_dropdown_masters",
+      "constraint_name": "attendance_dropdown_masters_key_key",
+      "column_name": "key"
+    },
+    {
+      "table_name": "company_capital",
+      "constraint_name": "company_capital_month_year_key",
+      "column_name": "month"
+    },
+    {
+      "table_name": "company_capital",
+      "constraint_name": "company_capital_month_year_key",
+      "column_name": "year"
+    },
+    {
+      "table_name": "daily_reports",
+      "constraint_name": "uq_daily_reports_tenant_user_date",
+      "column_name": "date"
+    },
+    {
+      "table_name": "daily_reports",
+      "constraint_name": "uq_daily_reports_tenant_user_date",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "daily_reports",
+      "constraint_name": "uq_daily_reports_tenant_user_date",
+      "column_name": "tenant_id"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "constraint_name": "employee_leave_balance_user_id_month_year_key",
+      "column_name": "month"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "constraint_name": "employee_leave_balance_user_id_month_year_key",
+      "column_name": "year"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "constraint_name": "employee_leave_balance_user_id_month_year_key",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "employee_leave_summary",
+      "constraint_name": "employee_leave_summary_user_id_month_year_key",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "employee_leave_summary",
+      "constraint_name": "employee_leave_summary_user_id_month_year_key",
+      "column_name": "year"
+    },
+    {
+      "table_name": "employee_leave_summary",
+      "constraint_name": "employee_leave_summary_user_id_month_year_key",
+      "column_name": "month"
+    },
+    {
+      "table_name": "expense_audits",
+      "constraint_name": "expense_audits_category_month_year_key",
+      "column_name": "month"
+    },
+    {
+      "table_name": "expense_audits",
+      "constraint_name": "expense_audits_category_month_year_key",
+      "column_name": "year"
+    },
+    {
+      "table_name": "expense_audits",
+      "constraint_name": "expense_audits_category_month_year_key",
+      "column_name": "category"
+    },
+    {
+      "table_name": "expense_categories",
+      "constraint_name": "expense_categories_name_key",
+      "column_name": "name"
+    },
+    {
+      "table_name": "holidays",
+      "constraint_name": "holidays_date_key",
+      "column_name": "date"
+    },
+    {
+      "table_name": "invoice_payment_stages",
+      "constraint_name": "invoice_payment_stages_invoice_id_payment_stage_id_key",
+      "column_name": "payment_stage_id"
+    },
+    {
+      "table_name": "invoice_payment_stages",
+      "constraint_name": "invoice_payment_stages_invoice_id_payment_stage_id_key",
+      "column_name": "invoice_id"
+    },
+    {
+      "table_name": "invoices",
+      "constraint_name": "invoices_invoice_no_key",
+      "column_name": "invoice_no"
+    },
+    {
+      "table_name": "monthly_closing_log",
+      "constraint_name": "monthly_closing_log_month_year_key",
+      "column_name": "year"
+    },
+    {
+      "table_name": "monthly_closing_log",
+      "constraint_name": "monthly_closing_log_month_year_key",
+      "column_name": "month"
+    },
+    {
+      "table_name": "payroll",
+      "constraint_name": "payroll_user_id_month_year_key",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "payroll",
+      "constraint_name": "payroll_user_id_month_year_key",
+      "column_name": "year"
+    },
+    {
+      "table_name": "payroll",
+      "constraint_name": "payroll_user_id_month_year_key",
+      "column_name": "month"
+    },
+    {
+      "table_name": "project_assignments",
+      "constraint_name": "project_assignments_project_id_user_id_key",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "project_assignments",
+      "constraint_name": "project_assignments_project_id_user_id_key",
+      "column_name": "project_id"
+    },
+    {
+      "table_name": "project_types",
+      "constraint_name": "project_types_name_key",
+      "column_name": "name"
+    },
+    {
+      "table_name": "project_vendors",
+      "constraint_name": "project_vendors_project_id_vendor_id_key",
+      "column_name": "project_id"
+    },
+    {
+      "table_name": "project_vendors",
+      "constraint_name": "project_vendors_project_id_vendor_id_key",
+      "column_name": "vendor_id"
+    },
+    {
+      "table_name": "task_participants",
+      "constraint_name": "task_participants_task_id_user_id_key",
+      "column_name": "task_id"
+    },
+    {
+      "table_name": "task_participants",
+      "constraint_name": "task_participants_task_id_user_id_key",
+      "column_name": "user_id"
+    },
+    {
+      "table_name": "users",
+      "constraint_name": "users_username_key",
+      "column_name": "username"
+    }
+  ]
+}

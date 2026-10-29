@@ -1,0 +1,2493 @@
+{
+  "allRoutes": [
+    {
+      "method": "GET",
+      "fullPath": "/api/accounting/expenses",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/accounting/expenses",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate), multer",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/accounting/expenses/:id",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate), requireAdmin, checkPeriodLock",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/accounting/expenses/audits",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/accounting/expenses/audits",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/accounting/payroll/employees",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PUT",
+      "fullPath": "/api/accounting/payroll/employees/:id",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate), checkPeriodLock",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/accounting/payroll/history",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/accounting/payroll",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate), checkPeriodLock",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/accounting/summary",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/accounting/payroll/:id",
+      "file": "server/routes/accounting.js",
+      "middlewares": "router.use(authenticate), authenticate, requireAdmin, checkPeriodLock",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/attendance/checkin",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/attendance/checkout",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/attendance/today",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/attendance/all",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/attendance/manual",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/attendance/attempts",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/attendance/users",
+      "file": "server/routes/attendance.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/auth/login",
+      "file": "server/routes/auth.js",
+      "middlewares": "None",
+      "roleGuard": "None (Public)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/auth/users",
+      "file": "server/routes/auth.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/clients",
+      "file": "server/routes/clients.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/clients/:id",
+      "file": "server/routes/clients.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/clients",
+      "file": "server/routes/clients.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/clients/:id",
+      "file": "server/routes/clients.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/clients/:id",
+      "file": "server/routes/clients.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/daily-reports",
+      "file": "server/routes/dailyReports.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/daily-reports/today",
+      "file": "server/routes/dailyReports.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/daily-reports",
+      "file": "server/routes/dailyReports.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PUT",
+      "fullPath": "/api/daily-reports/:id",
+      "file": "server/routes/dailyReports.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/dashboard/admin",
+      "file": "server/routes/dashboard.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/dashboard/admin/finances/breakdown",
+      "file": "server/routes/dashboard.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/dashboard/salary-breakdown",
+      "file": "server/routes/dashboard.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/dashboard/employee",
+      "file": "server/routes/dashboard.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/documents/upload",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/documents",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/documents/payment-stages",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/documents/payment-stages",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/documents/payment-stages/:id",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/documents/payment-stages/:id",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/documents/payment-stages/remove/tag",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/documents/amounts",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/documents/:id/download",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/documents/:id",
+      "file": "server/routes/documents.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/finances/transactions",
+      "file": "server/routes/finances.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/finances/transactions",
+      "file": "server/routes/finances.js",
+      "middlewares": "authenticate, multer",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/finances/summary",
+      "file": "server/routes/finances.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/finances/charts",
+      "file": "server/routes/finances.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/finances/transactions/:id",
+      "file": "server/routes/finances.js",
+      "middlewares": "authenticate, requireAdmin, checkPeriodLock",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/invoices",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/invoices/latest/number",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/invoices/:id",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/invoices",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/invoices/:id/status",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/invoices/:id/mark-paid",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/invoices/:id/record-payment",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/invoices/:id",
+      "file": "server/routes/invoices.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/leaves",
+      "file": "server/routes/leaves.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/leaves",
+      "file": "server/routes/leaves.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/leaves/:id",
+      "file": "server/routes/leaves.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/monthly-close/preview",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/monthly-close/execute",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/monthly-close/history",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/monthly-close/history/:month/:year",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/monthly-close/unlock",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/monthly-close/relock",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/monthly-close/:month/:year",
+      "file": "server/routes/monthlyClose.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/notifications/unread-count",
+      "file": "server/routes/notifications.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/notifications",
+      "file": "server/routes/notifications.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/notifications/:id/read",
+      "file": "server/routes/notifications.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/notifications/read-all",
+      "file": "server/routes/notifications.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/notifications/broadcast",
+      "file": "server/routes/notifications.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/projects",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects/:id",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/projects/:id",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects/search/linkable",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects/suggestions/:client_id",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects/:id/financial-summary",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAccounting, checkProjectAccess",
+      "roleGuard": "admin, back_office, accounts [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/projects/:id/stages/:stageId",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/projects/:id/assign",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/projects/:id/assign/:userId",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects/:id/stakeholders",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/projects/:id/stakeholders",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/projects/:id/stakeholders/:stakeholderId",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/projects/:id/stakeholders/:stakeholderId",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/projects/:id",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/projects/:id/vendors",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/projects/:id/vendors",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/projects/:id/vendors/:vendorId",
+      "file": "server/routes/projects.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/reports/attendance",
+      "file": "server/routes/reports.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/reports/finances",
+      "file": "server/routes/reports.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/reports/payroll",
+      "file": "server/routes/reports.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/reports/invoices",
+      "file": "server/routes/reports.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/reports/projects",
+      "file": "server/routes/reports.js",
+      "middlewares": "authenticate, requireAccounting",
+      "roleGuard": "admin, back_office, accounts"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/settings/users",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/settings/users",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/settings/users/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/settings/users/:id/restore",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/settings/users/:id/reset-password",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/settings/users/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/settings/change-password",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/settings/app",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/settings/app",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/settings/holidays",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/settings/holidays",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/settings/holidays/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/settings/factory-reset/preview",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/settings/factory-reset",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/settings/batches",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/settings/batches",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "PUT",
+      "fullPath": "/api/settings/batches/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/settings/batches/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/settings/batches/recalculate",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/settings/dropdowns",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/settings/dropdowns",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "PUT",
+      "fullPath": "/api/settings/dropdowns/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/settings/dropdowns/:id",
+      "file": "server/routes/settings.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/staff",
+      "file": "server/routes/staff.js",
+      "middlewares": "router.use(authenticate), requireAdmin",
+      "roleGuard": "admin"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/staff/:id",
+      "file": "server/routes/staff.js",
+      "middlewares": "router.use(authenticate)",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/tasks",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/tasks",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/tasks/export/report",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/tasks/:task_id",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/tasks/:task_id/messages",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/tasks/:task_id",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/tasks/:task_id",
+      "file": "server/routes/tasks.js",
+      "middlewares": "authenticate, checkProjectAccess",
+      "roleGuard": "Authenticated User (All Roles) [Scoped by Project/Assignment]"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/vendors",
+      "file": "server/routes/vendors.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "GET",
+      "fullPath": "/api/vendors/categories",
+      "file": "server/routes/vendors.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "POST",
+      "fullPath": "/api/vendors",
+      "file": "server/routes/vendors.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "PATCH",
+      "fullPath": "/api/vendors/:id",
+      "file": "server/routes/vendors.js",
+      "middlewares": "authenticate",
+      "roleGuard": "Authenticated User (All Roles)"
+    },
+    {
+      "method": "DELETE",
+      "fullPath": "/api/vendors/:id",
+      "file": "server/routes/vendors.js",
+      "middlewares": "authenticate, requireAdmin",
+      "roleGuard": "admin"
+    }
+  ],
+  "tables": [
+    "app_settings",
+    "attendance",
+    "attendance_attempts",
+    "attendance_batches",
+    "attendance_dropdown_masters",
+    "audit_logs",
+    "client_addresses",
+    "client_banking",
+    "client_contacts",
+    "clients",
+    "comments",
+    "company_capital",
+    "daily_reports",
+    "documents",
+    "employee_leave_balance",
+    "employee_leave_summary",
+    "expense_audits",
+    "expense_categories",
+    "holidays",
+    "invoice_payment_stages",
+    "invoices",
+    "leave_requests",
+    "monthly_closing_log",
+    "notifications",
+    "office_expenses",
+    "payroll",
+    "period_unlock_log",
+    "project_assignments",
+    "project_document_amounts",
+    "project_payment_stages",
+    "project_stages",
+    "project_stakeholders",
+    "project_types",
+    "project_vendors",
+    "projects",
+    "schema_migrations",
+    "task_messages",
+    "task_participants",
+    "tasks",
+    "tenants",
+    "transactions",
+    "users",
+    "vendors"
+  ],
+  "columnsCount": 381,
+  "fks": [
+    {
+      "table_name": "attendance",
+      "column_name": "batch_id",
+      "foreign_table_name": "attendance_batches",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "attendance_batch_id_fkey"
+    },
+    {
+      "table_name": "attendance",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "RESTRICT",
+      "constraint_name": "attendance_user_id_fkey"
+    },
+    {
+      "table_name": "attendance_attempts",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "attendance_attempts_user_id_fkey"
+    },
+    {
+      "table_name": "audit_logs",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "audit_logs_user_id_fkey"
+    },
+    {
+      "table_name": "client_addresses",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "client_addresses_client_id_fkey"
+    },
+    {
+      "table_name": "client_banking",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "client_banking_client_id_fkey"
+    },
+    {
+      "table_name": "client_contacts",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "client_contacts_client_id_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "assigned_to",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "comments_assigned_to_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "parent_id",
+      "foreign_table_name": "comments",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "comments_parent_id_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "comments_project_id_fkey"
+    },
+    {
+      "table_name": "comments",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "comments_user_id_fkey"
+    },
+    {
+      "table_name": "daily_reports",
+      "column_name": "tenant_id",
+      "foreign_table_name": "tenants",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "daily_reports_tenant_id_fkey"
+    },
+    {
+      "table_name": "daily_reports",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "daily_reports_user_id_fkey"
+    },
+    {
+      "table_name": "documents",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "documents_project_id_fkey"
+    },
+    {
+      "table_name": "documents",
+      "column_name": "uploaded_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "documents_uploaded_by_fkey"
+    },
+    {
+      "table_name": "employee_leave_balance",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "employee_leave_balance_user_id_fkey"
+    },
+    {
+      "table_name": "employee_leave_summary",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "employee_leave_summary_user_id_fkey"
+    },
+    {
+      "table_name": "expense_audits",
+      "column_name": "verified_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "expense_audits_verified_by_fkey"
+    },
+    {
+      "table_name": "invoice_payment_stages",
+      "column_name": "invoice_id",
+      "foreign_table_name": "invoices",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "invoice_payment_stages_invoice_id_fkey"
+    },
+    {
+      "table_name": "invoice_payment_stages",
+      "column_name": "payment_stage_id",
+      "foreign_table_name": "project_payment_stages",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "invoice_payment_stages_payment_stage_id_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_client_id_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_created_by_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "payment_stage_id",
+      "foreign_table_name": "project_payment_stages",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_payment_stage_id_fkey"
+    },
+    {
+      "table_name": "invoices",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "invoices_project_id_fkey"
+    },
+    {
+      "table_name": "leave_requests",
+      "column_name": "reviewed_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "leave_requests_reviewed_by_fkey"
+    },
+    {
+      "table_name": "leave_requests",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "leave_requests_user_id_fkey"
+    },
+    {
+      "table_name": "monthly_closing_log",
+      "column_name": "closed_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "monthly_closing_log_closed_by_fkey"
+    },
+    {
+      "table_name": "notifications",
+      "column_name": "sender_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "notifications_sender_id_fkey"
+    },
+    {
+      "table_name": "notifications",
+      "column_name": "tenant_id",
+      "foreign_table_name": "tenants",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "notifications_tenant_id_fkey"
+    },
+    {
+      "table_name": "notifications",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "notifications_user_id_fkey"
+    },
+    {
+      "table_name": "office_expenses",
+      "column_name": "period_unlock_id",
+      "foreign_table_name": "period_unlock_log",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "office_expenses_period_unlock_id_fkey"
+    },
+    {
+      "table_name": "payroll",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "RESTRICT",
+      "constraint_name": "payroll_user_id_fkey"
+    },
+    {
+      "table_name": "period_unlock_log",
+      "column_name": "relocked_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "period_unlock_log_relocked_by_fkey"
+    },
+    {
+      "table_name": "period_unlock_log",
+      "column_name": "unlocked_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "period_unlock_log_unlocked_by_fkey"
+    },
+    {
+      "table_name": "project_assignments",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_assignments_project_id_fkey"
+    },
+    {
+      "table_name": "project_assignments",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_assignments_user_id_fkey"
+    },
+    {
+      "table_name": "project_document_amounts",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_document_amounts_project_id_fkey"
+    },
+    {
+      "table_name": "project_payment_stages",
+      "column_name": "initiated_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "project_payment_stages_initiated_by_fkey"
+    },
+    {
+      "table_name": "project_payment_stages",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_payment_stages_project_id_fkey"
+    },
+    {
+      "table_name": "project_stages",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_stages_project_id_fkey"
+    },
+    {
+      "table_name": "project_stakeholders",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_stakeholders_project_id_fkey"
+    },
+    {
+      "table_name": "project_vendors",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_vendors_project_id_fkey"
+    },
+    {
+      "table_name": "project_vendors",
+      "column_name": "vendor_id",
+      "foreign_table_name": "vendors",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "project_vendors_vendor_id_fkey"
+    },
+    {
+      "table_name": "projects",
+      "column_name": "client_id",
+      "foreign_table_name": "clients",
+      "foreign_column_name": "id",
+      "delete_rule": "NO ACTION",
+      "constraint_name": "projects_client_id_fkey"
+    },
+    {
+      "table_name": "projects",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "projects_created_by_fkey"
+    },
+    {
+      "table_name": "task_messages",
+      "column_name": "sender_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "task_messages_sender_id_fkey"
+    },
+    {
+      "table_name": "task_messages",
+      "column_name": "task_id",
+      "foreign_table_name": "tasks",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_messages_task_id_fkey"
+    },
+    {
+      "table_name": "task_participants",
+      "column_name": "added_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_participants_added_by_fkey"
+    },
+    {
+      "table_name": "task_participants",
+      "column_name": "task_id",
+      "foreign_table_name": "tasks",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_participants_task_id_fkey"
+    },
+    {
+      "table_name": "task_participants",
+      "column_name": "user_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "task_participants_user_id_fkey"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "assigned_to",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "tasks_assigned_to_fkey"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "tasks_created_by_fkey"
+    },
+    {
+      "table_name": "tasks",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "CASCADE",
+      "constraint_name": "tasks_project_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "created_by",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_created_by_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "employee_id",
+      "foreign_table_name": "users",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_employee_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "period_unlock_id",
+      "foreign_table_name": "period_unlock_log",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_period_unlock_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "project_id",
+      "foreign_table_name": "projects",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_project_id_fkey"
+    },
+    {
+      "table_name": "transactions",
+      "column_name": "vendor_id",
+      "foreign_table_name": "vendors",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "transactions_vendor_id_fkey"
+    },
+    {
+      "table_name": "users",
+      "column_name": "batch_id",
+      "foreign_table_name": "attendance_batches",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "users_batch_id_fkey"
+    },
+    {
+      "table_name": "users",
+      "column_name": "tenant_id",
+      "foreign_table_name": "tenants",
+      "foreign_column_name": "id",
+      "delete_rule": "SET NULL",
+      "constraint_name": "users_tenant_id_fkey"
+    }
+  ],
+  "indexesCount": 122,
+  "clientApiCalls": [
+    {
+      "file": "client/src/components/clients/ClientModal.jsx",
+      "method": "GET",
+      "url": "/clients/${initialClient.id}"
+    },
+    {
+      "file": "client/src/components/clients/ClientModal.jsx",
+      "method": "PATCH",
+      "url": "/clients/${initialClient.id}"
+    },
+    {
+      "file": "client/src/components/clients/ClientModal.jsx",
+      "method": "POST",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/components/clients/LinkProjectModal.jsx",
+      "method": "GET",
+      "url": "/projects/search/linkable"
+    },
+    {
+      "file": "client/src/components/clients/LinkProjectModal.jsx",
+      "method": "PATCH",
+      "url": "/projects/${projectId}"
+    },
+    {
+      "file": "client/src/components/dashboard/FinancialBreakdownModal.jsx",
+      "method": "GET",
+      "url": "/dashboard/admin/finances/breakdown?type=${type}"
+    },
+    {
+      "file": "client/src/components/dashboard/RequestKanbanBoard.jsx",
+      "method": "GET",
+      "url": "/leaves?view=kanban"
+    },
+    {
+      "file": "client/src/components/dashboard/RequestKanbanBoard.jsx",
+      "method": "PATCH",
+      "url": "/leaves/${requestId}"
+    },
+    {
+      "file": "client/src/components/dashboard/SalaryBreakdownModal.jsx",
+      "method": "GET",
+      "url": "/dashboard/salary-breakdown"
+    },
+    {
+      "file": "client/src/components/projects/ChangeClientModal.jsx",
+      "method": "GET",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/components/projects/ChangeClientModal.jsx",
+      "method": "PATCH",
+      "url": "/projects/${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "GET",
+      "url": "/documents?project_id=${projectId}&category=document&grouped=true"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "GET",
+      "url": "/documents/payment-stages?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "POST",
+      "url": "/documents/amounts"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "POST",
+      "url": "/documents/upload?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "GET",
+      "url": "/documents/${doc.id}/download"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "DELETE",
+      "url": "/documents/${doc.id}"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "POST",
+      "url": "/documents/payment-stages"
+    },
+    {
+      "file": "client/src/components/projects/DocumentsTab.jsx",
+      "method": "DELETE",
+      "url": "/documents/payment-stages/remove/tag"
+    },
+    {
+      "file": "client/src/components/projects/InvoiceHistoryTab.jsx",
+      "method": "POST",
+      "url": "/invoices/${id}/mark-paid"
+    },
+    {
+      "file": "client/src/components/projects/InvoiceHistoryTab.jsx",
+      "method": "GET",
+      "url": "/invoices?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/InvoiceHistoryTab.jsx",
+      "method": "GET",
+      "url": "/documents/payment-stages?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/PaymentStagesTab.jsx",
+      "method": "GET",
+      "url": "/documents/payment-stages?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/PaymentStagesTab.jsx",
+      "method": "PATCH",
+      "url": "/documents/payment-stages/${stageId}"
+    },
+    {
+      "file": "client/src/components/projects/ProjectFinancesTab.jsx",
+      "method": "GET",
+      "url": "/finances/transactions?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/ProjectFinancesTab.jsx",
+      "method": "GET",
+      "url": "/finances/summary?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/ProjectStakeholderModal.jsx",
+      "method": "GET",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/components/projects/ProjectStakeholderModal.jsx",
+      "method": "PATCH",
+      "url": "/projects/${projectId}/stakeholders/${stakeholder.id}"
+    },
+    {
+      "file": "client/src/components/projects/ProjectStakeholderModal.jsx",
+      "method": "POST",
+      "url": "/projects/${projectId}/stakeholders"
+    },
+    {
+      "file": "client/src/components/projects/RecordPaymentModal.jsx",
+      "method": "POST",
+      "url": "/invoices/${invoice.id}/record-payment"
+    },
+    {
+      "file": "client/src/components/projects/SitePhotographsTab.jsx",
+      "method": "GET",
+      "url": "/documents?project_id=${projectId}&category=photo"
+    },
+    {
+      "file": "client/src/components/projects/SitePhotographsTab.jsx",
+      "method": "POST",
+      "url": "/documents/upload?project_id=${projectId}"
+    },
+    {
+      "file": "client/src/components/projects/SitePhotographsTab.jsx",
+      "method": "GET",
+      "url": "/documents/${photo.id}/download"
+    },
+    {
+      "file": "client/src/components/projects/SitePhotographsTab.jsx",
+      "method": "DELETE",
+      "url": "/documents/${id}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "GET",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "GET",
+      "url": "/auth/users"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "GET",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "POST",
+      "url": "/tasks/${taskId}/messages"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/TaskModal.jsx",
+      "method": "DELETE",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "GET",
+      "url": "/projects/${projectId}/vendors"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "GET",
+      "url": "/vendors"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "GET",
+      "url": "/finances/transactions?project_id=${projectId}&category=vendor_payment"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "DELETE",
+      "url": "/finances/transactions/${id}"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "POST",
+      "url": "/projects/${projectId}/vendors"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "DELETE",
+      "url": "/projects/${projectId}/vendors/${vendorId}"
+    },
+    {
+      "file": "client/src/components/projects/VendorsTab.jsx",
+      "method": "POST",
+      "url": "/finances/transactions"
+    },
+    {
+      "file": "client/src/components/staff/ResetPasswordModal.jsx",
+      "method": "PATCH",
+      "url": "/settings/users/${userId}/reset-password"
+    },
+    {
+      "file": "client/src/components/staff/UserModal.jsx",
+      "method": "GET",
+      "url": "/settings/batches"
+    },
+    {
+      "file": "client/src/components/staff/UserModal.jsx",
+      "method": "PATCH",
+      "url": "/settings/users/${initialUser.id}"
+    },
+    {
+      "file": "client/src/components/staff/UserModal.jsx",
+      "method": "POST",
+      "url": "/settings/users"
+    },
+    {
+      "file": "client/src/components/ui/AttendanceCard.jsx",
+      "method": "POST",
+      "url": "/attendance/checkin"
+    },
+    {
+      "file": "client/src/components/ui/AttendanceCard.jsx",
+      "method": "GET",
+      "url": "/attendance/today"
+    },
+    {
+      "file": "client/src/components/ui/AttendanceCard.jsx",
+      "method": "POST",
+      "url": "/attendance/checkout"
+    },
+    {
+      "file": "client/src/components/ui/AttendanceCard.jsx",
+      "method": "GET",
+      "url": "/attendance/today"
+    },
+    {
+      "file": "client/src/context/AuthContext.jsx",
+      "method": "POST",
+      "url": "/auth/login"
+    },
+    {
+      "file": "client/src/context/NotificationContext.jsx",
+      "method": "GET",
+      "url": "/notifications/unread-count"
+    },
+    {
+      "file": "client/src/context/NotificationContext.jsx",
+      "method": "GET",
+      "url": "/notifications"
+    },
+    {
+      "file": "client/src/context/NotificationContext.jsx",
+      "method": "PATCH",
+      "url": "/notifications/${id}/read"
+    },
+    {
+      "file": "client/src/context/NotificationContext.jsx",
+      "method": "PATCH",
+      "url": "/notifications/read-all"
+    },
+    {
+      "file": "client/src/context/NotificationContext.jsx",
+      "method": "POST",
+      "url": "/notifications/broadcast"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/projects"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/accounting/expenses/audits?month=${selectedMonth}&year=${selectedYear}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/accounting/expenses/audits"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/accounting/payroll/employees?month=${selectedMonth}&year=${selectedYear}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/accounting/payroll/history?month=${selectedMonth}&year=${selectedYear}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/preview?month=${selectedMonth}&year=${selectedYear}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/monthly-close/execute"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/monthly-close/unlock"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/monthly-close/relock"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "DELETE",
+      "url": "/monthly-close/${m}/${y}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history/${m}/${y}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/invoices"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "GET",
+      "url": "/documents/payment-stages?project_id=${filters.projectId}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/invoices/${id}/mark-paid"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "DELETE",
+      "url": "/invoices/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/finances/transactions"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "DELETE",
+      "url": "/finances/transactions/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "DELETE",
+      "url": "/accounting/payroll/${payrollId}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "POST",
+      "url": "/accounting/payroll"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "PUT",
+      "url": "/accounting/payroll/employees/${emp.id}"
+    },
+    {
+      "file": "client/src/pages/admin/AccountingPage.jsx",
+      "method": "PUT",
+      "url": "/accounting/payroll/employees/${emp.id}"
+    },
+    {
+      "file": "client/src/pages/admin/AdminDashboard.jsx",
+      "method": "GET",
+      "url": "/tasks?view=kanban"
+    },
+    {
+      "file": "client/src/pages/admin/AdminDashboard.jsx",
+      "method": "GET",
+      "url": "/invoices?limit=500"
+    },
+    {
+      "file": "client/src/pages/admin/AdminDashboard.jsx",
+      "method": "GET",
+      "url": "/accounting/payroll/history"
+    },
+    {
+      "file": "client/src/pages/admin/AdminDashboard.jsx",
+      "method": "GET",
+      "url": "/dashboard/admin"
+    },
+    {
+      "file": "client/src/pages/admin/AdminDashboard.jsx",
+      "method": "GET",
+      "url": "/attendance/today"
+    },
+    {
+      "file": "client/src/pages/admin/ClientDetail.jsx",
+      "method": "GET",
+      "url": "/clients/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/ClientDetail.jsx",
+      "method": "GET",
+      "url": "/projects/suggestions/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/ClientDetail.jsx",
+      "method": "DELETE",
+      "url": "/clients/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history/${month}/${year}"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history/${month}/${year}"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history/${month}/${year}"
+    },
+    {
+      "file": "client/src/pages/admin/HistoryPage.jsx",
+      "method": "POST",
+      "url": "/monthly-close/relock"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/documents/payment-stages?project_id=${pid}"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/invoices/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/projects/${pid}/financial-summary"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/settings/app"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/invoices/latest/number"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/projects"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "GET",
+      "url": "/invoices"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "POST",
+      "url": "/invoices"
+    },
+    {
+      "file": "client/src/pages/admin/InvoicePage.jsx",
+      "method": "POST",
+      "url": "/invoices/${savedInvoice.id}/mark-paid"
+    },
+    {
+      "file": "client/src/pages/admin/ReportsPage.jsx",
+      "method": "GET",
+      "url": "/attendance/users"
+    },
+    {
+      "file": "client/src/pages/admin/ReportsPage.jsx",
+      "method": "GET",
+      "url": "/projects"
+    },
+    {
+      "file": "client/src/pages/admin/ReportsPage.jsx",
+      "method": "GET",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/users?status=${userSubTab}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/batches"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/batches"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/dropdowns?all=true"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/app"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/batches"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/holidays"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/app"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/users"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "PATCH",
+      "url": "/settings/users/${editingUser.id}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "DELETE",
+      "url": "/settings/users/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "PATCH",
+      "url": "/settings/users/${u.id}/restore"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "PATCH",
+      "url": "/settings/users/${resetModal.userId}/reset-password"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/app"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/app"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "GET",
+      "url": "/settings/factory-reset/preview"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "DELETE",
+      "url": "/settings/factory-reset"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/holidays"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "DELETE",
+      "url": "/settings/holidays/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/batches"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/batches/recalculate"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "PUT",
+      "url": "/settings/batches/${editingBatch.id}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "DELETE",
+      "url": "/settings/batches/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "PUT",
+      "url": "/settings/dropdowns/${editingDropdown.id}"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "POST",
+      "url": "/settings/dropdowns"
+    },
+    {
+      "file": "client/src/pages/admin/SettingsPage.jsx",
+      "method": "DELETE",
+      "url": "/settings/dropdowns/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/StaffDetailPage.jsx",
+      "method": "GET",
+      "url": "/staff/${id}"
+    },
+    {
+      "file": "client/src/pages/admin/StaffPage.jsx",
+      "method": "GET",
+      "url": "/staff"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "GET",
+      "url": "/settings/app"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "GET",
+      "url": "/settings/dropdowns"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "GET",
+      "url": "/attendance/users"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "GET",
+      "url": "/attendance/today"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "GET",
+      "url": "/leaves"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "POST",
+      "url": "/attendance/manual"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "PATCH",
+      "url": "/leaves/${l.id}"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "PATCH",
+      "url": "/leaves/${l.id}"
+    },
+    {
+      "file": "client/src/pages/AttendancePage.jsx",
+      "method": "POST",
+      "url": "/leaves"
+    },
+    {
+      "file": "client/src/pages/ClientsPage.jsx",
+      "method": "GET",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/pages/ClientsPage.jsx",
+      "method": "DELETE",
+      "url": "/clients/${id}"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "GET",
+      "url": "/daily-reports"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "GET",
+      "url": "/daily-reports/today"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "GET",
+      "url": "/auth/users"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "GET",
+      "url": "/daily-reports?date=${selectedDate}"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "PUT",
+      "url": "/daily-reports/${editingReportId}"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "POST",
+      "url": "/daily-reports"
+    },
+    {
+      "file": "client/src/pages/DailyReportsPage.jsx",
+      "method": "GET",
+      "url": "/daily-reports"
+    },
+    {
+      "file": "client/src/pages/employee/EmployeeDashboard.jsx",
+      "method": "POST",
+      "url": "/attendance/checkin"
+    },
+    {
+      "file": "client/src/pages/employee/EmployeeDashboard.jsx",
+      "method": "POST",
+      "url": "/attendance/checkout"
+    },
+    {
+      "file": "client/src/pages/employee/EmployeeDashboard.jsx",
+      "method": "GET",
+      "url": "/tasks?view=kanban"
+    },
+    {
+      "file": "client/src/pages/employee/EmployeeDashboard.jsx",
+      "method": "GET",
+      "url": "/dashboard/employee"
+    },
+    {
+      "file": "client/src/pages/employee/EmployeeDashboard.jsx",
+      "method": "GET",
+      "url": "/attendance/today"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "GET",
+      "url": "/projects/${id}"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "GET",
+      "url": "/tasks?project_id=${id}"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "GET",
+      "url": "/projects/${id}/stakeholders"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "GET",
+      "url": "/auth/users"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "POST",
+      "url": "/tasks"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "PATCH",
+      "url": "/projects/${id}/stages/${stageId}"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "PATCH",
+      "url": "/projects/${id}"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "DELETE",
+      "url": "/projects/${id}"
+    },
+    {
+      "file": "client/src/pages/ProjectDetail.jsx",
+      "method": "DELETE",
+      "url": "/projects/${id}/stakeholders/${stakeholderId}"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "GET",
+      "url": "/clients"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "POST",
+      "url": "/projects"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "GET",
+      "url": "/settings/users"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "GET",
+      "url": "/projects/${project.id}"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "DELETE",
+      "url": "/projects/${project.id}/assign/${userId}"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "POST",
+      "url": "/projects/${project.id}/assign"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "GET",
+      "url": "/projects"
+    },
+    {
+      "file": "client/src/pages/ProjectsPage.jsx",
+      "method": "DELETE",
+      "url": "/projects/${id}"
+    },
+    {
+      "file": "client/src/pages/TasksPage.jsx",
+      "method": "GET",
+      "url": "/tasks/export/report?${params.toString()}"
+    },
+    {
+      "file": "client/src/pages/TasksPage.jsx",
+      "method": "GET",
+      "url": "/projects"
+    },
+    {
+      "file": "client/src/pages/TasksPage.jsx",
+      "method": "GET",
+      "url": "/auth/users"
+    },
+    {
+      "file": "client/src/pages/TasksPage.jsx",
+      "method": "GET",
+      "url": "/tasks?view=${viewMode === "
+    },
+    {
+      "file": "client/src/pages/TasksPage.jsx",
+      "method": "POST",
+      "url": "/tasks"
+    },
+    {
+      "file": "client/src/pages/TasksPage.jsx",
+      "method": "PATCH",
+      "url": "/tasks/${taskId}"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "PATCH",
+      "url": "/vendors/${vendor.id}"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "POST",
+      "url": "/vendors"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "GET",
+      "url": "/vendors"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "DELETE",
+      "url": "/vendors/${id}"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "GET",
+      "url": "/finances/transactions?vendor_id=${vendor.id}&category=vendor_payment"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "GET",
+      "url": "/monthly-close/history"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "DELETE",
+      "url": "/finances/transactions/${id}"
+    },
+    {
+      "file": "client/src/pages/VendorsPage.jsx",
+      "method": "GET",
+      "url": "/finances/transactions?vendor_id=${vendor.id}&category=vendor_payment"
+    }
+  ],
+  "modals": [
+    "AccountingPage.jsx",
+    "AdminDashboard.jsx",
+    "HistoryPage.jsx",
+    "InvoicePage.jsx",
+    "SettingsPage.jsx",
+    "AttendancePage.jsx",
+    "EmployeeDashboard.jsx",
+    "LoginPage.jsx",
+    "ProjectsPage.jsx",
+    "VendorsPage.jsx",
+    "ClientModal.jsx",
+    "LinkProjectModal.jsx",
+    "FinancialBreakdownModal.jsx",
+    "SalaryBreakdownModal.jsx",
+    "AppLayout.jsx",
+    "NotificationDrawer.jsx",
+    "ChangeClientModal.jsx",
+    "ProjectStakeholderModal.jsx",
+    "RecordPaymentModal.jsx",
+    "SitePhotographsTab.jsx",
+    "TaskModal.jsx",
+    "VendorsTab.jsx",
+    "ResetPasswordModal.jsx",
+    "UserModal.jsx"
+  ],
+  "tabsCount": 8,
+  "totalButtons": 325,
+  "bgJobs": [
+    {
+      "file": "server/index.js",
+      "invocation": "setInterval(cleanupOldTasks, 24 * 60 * 60 * 1000)"
+    },
+    {
+      "file": "server/index.js",
+      "invocation": "setInterval(autoCheckout, 1 * 60 * 60 * 1000)"
+    },
+    {
+      "file": "server/index.js",
+      "invocation": "setInterval(cleanupOldNotifications, 24 * 60 * 60 * 1000)"
+    },
+    {
+      "file": "server/utils/scheduler.js",
+      "invocation": "setInterval(() => {\n    checkAndAutoCloseMonth();\n    checkAndAutoCheckoutDaily();\n  }, 60 * 1000)"
+    }
+  ]
+}

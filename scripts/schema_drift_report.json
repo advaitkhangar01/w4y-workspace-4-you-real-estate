@@ -1,0 +1,90 @@
+{
+  "missingInSchema": [
+    "attendance_dropdown_masters",
+    "audit_logs",
+    "company_capital",
+    "daily_reports",
+    "employee_leave_balance",
+    "expense_categories",
+    "invoice_payment_stages",
+    "monthly_closing_log",
+    "notifications",
+    "period_unlock_log",
+    "project_stakeholders",
+    "project_types",
+    "project_vendors",
+    "schema_migrations",
+    "tenants"
+  ],
+  "missingInLive": [],
+  "colDrift": {
+    "app_settings": [
+      "updated_at"
+    ],
+    "attendance": [
+      "overtime_hours"
+    ],
+    "attendance_attempts": [
+      "created_at"
+    ],
+    "client_addresses": [
+      "created_at"
+    ],
+    "client_banking": [
+      "created_at"
+    ],
+    "client_contacts": [
+      "created_at"
+    ],
+    "clients": [
+      "company"
+    ],
+    "comments": [
+      "task_due_text"
+    ],
+    "documents": [
+      "extension",
+      "original_name",
+      "stored_name"
+    ],
+    "employee_leave_summary": [
+      "leaves_taken"
+    ],
+    "expense_audits": [
+      "id"
+    ],
+    "holidays": [
+      "created_at"
+    ],
+    "invoices": [
+      "received_amount"
+    ],
+    "office_expenses": [
+      "period_unlock_id"
+    ],
+    "payroll": [
+      "created_at",
+      "is_manual_override"
+    ],
+    "projects": [
+      "budget",
+      "requirements",
+      "scope",
+      "target_date"
+    ],
+    "tasks": [
+      "completed_at",
+      "due_date",
+      "priority",
+      "reassigned_at"
+    ],
+    "transactions": [
+      "period_unlock_id"
+    ],
+    "users": [
+      "deactivated_at",
+      "is_active",
+      "tenant_id"
+    ]
+  }
+}
