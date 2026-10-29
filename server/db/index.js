@@ -603,12 +603,12 @@ if (process.env.NODE_ENV !== 'test') {
 
         await pool.query(`
           DELETE FROM expense_audits a USING expense_audits b 
-          WHERE a.id < b.id AND a.category = b.category AND a.month = b.month AND a.year = b.year;
+          WHERE a.ctid < b.ctid AND a.category = b.category AND a.month = b.month AND a.year = b.year;
         `);
 
         await pool.query(`
           DELETE FROM employee_leave_balance a USING employee_leave_balance b 
-          WHERE a.id < b.id AND a.user_id = b.user_id AND a.month = b.month AND a.year = b.year;
+          WHERE a.ctid < b.ctid AND a.user_id = b.user_id AND a.month = b.month AND a.year = b.year;
         `);
 
         // 25. Enforce unique constraints on relevant tables
